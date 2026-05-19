@@ -104,6 +104,30 @@ h1 {
   color: var(--text-muted);
 }
 
+.hero-meta {
+  margin: 12px 0 0;
+}
+
+.subtle-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.subtle-link:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.subtle-link-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
 .hero-text {
   max-width: 620px;
   margin: 22px 0 0;
