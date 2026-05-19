@@ -223,6 +223,15 @@ h3 {
   margin: 0;
 }
 
+.feature-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.feature-list li + li {
+  margin-top: 10px;
+}
+
 @media (max-width: 640px) {
   .language-switcher {
     justify-content: flex-start;

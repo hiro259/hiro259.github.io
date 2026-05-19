@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahjong Tile Pad</title>
+  <meta
+    name="description"
+    content="Mahjong Tile Pad のサポートページです。"
+  >
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="language-switcher container" aria-label="Language switcher">
+    <button type="button" class="language-button" data-lang-switch="ja">日本語</button>
+    <button type="button" class="language-button" data-lang-switch="en">English</button>
+  </div>
+
+  <header class="hero hero-simple">
+    <div class="container">
+      <p class="eyebrow">
+        <span data-lang-content="en">App Support</span>
+        <span data-lang-content="ja">アプリサポート</span>
+      </p>
+      <h1 data-lang-content="en">Mahjong Tile Pad</h1>
+      <h1 data-lang-content="ja">麻雀牌パッド</h1>
+      <p class="hero-subtitle" data-lang-content="en">Type and copy mahjong tiles</p>
+      <p class="hero-subtitle" data-lang-content="ja">麻雀牌を文字で入力してコピー</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="panel">
+        <div data-lang-content="en">
+          <p>Mahjong Tile Pad is a simple app for typing and copying mahjong tiles as text.</p>
+          <p>You can quickly build a tile string and copy it when you want to share hands or notes.</p>
+        </div>
+        <div data-lang-content="ja">
+          <p>Mahjong Tile Pad は、麻雀牌を文字で入力してコピーできるシンプルなアプリです。</p>
+          <p>手牌やメモを文字で手早く作って、すぐにコピーして使えます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="section-label">
+          <span data-lang-content="en">Features</span>
+          <span data-lang-content="ja">Features</span>
+        </p>
+        <h2>
+          <span data-lang-content="en">Main Features</span>
+          <span data-lang-content="ja">主な機能</span>
+        </h2>
+      </div>
+      <div class="panel">
+        <ul class="feature-list" data-lang-content="en">
+          <li>Tap tiles to add them</li>
+          <li>Copy all tiles instantly</li>
+          <li>Tap Del to remove the last tile</li>
+          <li>Long press Del to clear all</li>
+          <li>Supports both portrait and landscape layouts</li>
+          <li>Open Help from the ? button</li>
+        </ul>
+        <ul class="feature-list" data-lang-content="ja">
+          <li>牌をタップして入力</li>
+          <li>Copyで牌をまとめてコピー</li>
+          <li>Delで最後の牌を削除</li>
+          <li>Del長押しで全消去</li>
+          <li>縦画面・横画面に対応</li>
+          <li>？から使い方を確認可能</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="section-label">
+          <span data-lang-content="en">Support</span>
+          <span data-lang-content="ja">Support</span>
+        </p>
+        <h2>
+          <span data-lang-content="en">Contact</span>
+          <span data-lang-content="ja">サポート連絡先</span>
+        </h2>
+      </div>
+      <div class="panel">
+        <p data-lang-content="en">
+          For support or questions:
+          <a href="mailto:2599.hiro@gmail.com">2599.hiro@gmail.com</a>
+        </p>
+        <p data-lang-content="ja">
+          サポートやお問い合わせ:
+          <a href="mailto:2599.hiro@gmail.com">2599.hiro@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="app-links">
+        <a href="../privacy.html">
+          <span data-lang-content="en">Privacy Policy</span>
+          <span data-lang-content="ja">プライバシーポリシー</span>
+        </a>
+        <a href="../index.html">
+          <span data-lang-content="en">Back to Home</span>
+          <span data-lang-content="ja">トップページへ戻る</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var storageKey = "preferredLanguage";
+      var defaultLang = "ja";
+      var langButtons = document.querySelectorAll("[data-lang-switch]");
+      var langContents = document.querySelectorAll("[data-lang-content]");
+
+      function applyLanguage(lang) {
+        var activeLang = lang === "en" ? "en" : "ja";
+
+        document.documentElement.lang = activeLang;
+        document.body.setAttribute("data-current-lang", activeLang);
+
+        langContents.forEach(function (element) {
+          element.hidden = element.getAttribute("data-lang-content") !== activeLang;
+        });
+
+        langButtons.forEach(function (button) {
+          var isActive = button.getAttribute("data-lang-switch") === activeLang;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+
+        localStorage.setItem(storageKey, activeLang);
+      }
+
+      var savedLang = localStorage.getItem(storageKey) || defaultLang;
+      applyLanguage(savedLang);
+
+      langButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          applyLanguage(button.getAttribute("data-lang-switch"));
+        });
+      });
+    }());
+  </script>
+</body>
+</html>
