@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahjong Tile Pad Privacy Policy</title>
+  <meta
+    name="description"
+    content="Privacy policy page for Mahjong Tile Pad."
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="language-switcher container" aria-label="Language switcher">
+    <button type="button" class="language-button" data-lang-switch="ja">日本語</button>
+    <button type="button" class="language-button" data-lang-switch="en">English</button>
+  </div>
+
+  <header class="hero hero-simple">
+    <div class="container">
+      <p class="eyebrow">
+        <span data-lang-content="en">Privacy Policy</span>
+        <span data-lang-content="ja">プライバシーポリシー</span>
+      </p>
+      <h1>Mahjong Tile Pad</h1>
+      <p class="hero-subtitle">
+        <span data-lang-content="en">Privacy information for the app</span>
+        <span data-lang-content="ja">アプリのプライバシー情報</span>
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="panel">
+        <div data-lang-content="en">
+          <p>This app does not collect personal information.</p>
+          <p>The text you type in the app is handled only on your device.</p>
+          <p>If the policy changes in the future, this page will be updated.</p>
+        </div>
+        <div data-lang-content="ja">
+          <p>このアプリは個人情報を収集しません。</p>
+          <p>アプリ内で入力したテキストは、利用者の端末内でのみ扱われます。</p>
+          <p>今後ポリシーを変更する場合は、このページを更新します。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <p data-lang-content="en">
+          Contact:
+          <a href="mailto:2599.hiro@gmail.com">2599.hiro@gmail.com</a>
+        </p>
+        <p data-lang-content="ja">
+          連絡先:
+          <a href="mailto:2599.hiro@gmail.com">2599.hiro@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="back-link">
+        <a href="./index.html">
+          <span data-lang-content="en">Back to Home</span>
+          <span data-lang-content="ja">トップページへ戻る</span>
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var storageKey = "preferredLanguage";
+      var defaultLang = "en";
+      var langButtons = document.querySelectorAll("[data-lang-switch]");
+      var langContents = document.querySelectorAll("[data-lang-content]");
+
+      function applyLanguage(lang) {
+        var activeLang = lang === "ja" ? "ja" : "en";
+
+        document.documentElement.lang = activeLang;
+        document.body.setAttribute("data-current-lang", activeLang);
+
+        langContents.forEach(function (element) {
+          element.hidden = element.getAttribute("data-lang-content") !== activeLang;
+        });
+
+        langButtons.forEach(function (button) {
+          var isActive = button.getAttribute("data-lang-switch") === activeLang;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+
+        localStorage.setItem(storageKey, activeLang);
+      }
+
+      var savedLang = localStorage.getItem(storageKey) || defaultLang;
+      applyLanguage(savedLang);
+
+      langButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          applyLanguage(button.getAttribute("data-lang-switch"));
+        });
+      });
+    }());
+  </script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-muted: #f9fafb;
+  --text: #1b1f24;
+  --text-muted: #5f6b76;
+  --border: #e2e8f0;
+  --accent: #1f6feb;
+  --shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+  --radius: 18px;
+  --max-width: 920px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+body[data-current-lang="ja"] {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(calc(100% - 32px), var(--max-width));
+  margin: 0 auto;
+}
+
+.language-switcher {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 20px;
+}
+
+.language-button {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.language-button.is-active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: #eff6ff;
+}
+
+.hero {
+  padding: 72px 0 40px;
+}
+
+.hero-simple {
+  padding-top: 32px;
+}
+
+.eyebrow,
+.section-label,
+.app-label {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+h1,
+h2,
+h3,
+.hero-subtitle,
+.app-name-ja {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.05;
+}
+
+.hero-subtitle {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.hero-text {
+  max-width: 620px;
+  margin: 22px 0 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.section {
+  padding: 20px 0 28px;
+}
+
+.section-heading {
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+.panel,
+.app-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.panel {
+  padding: 24px;
+}
+
+.panel p,
+.app-card p {
+  margin: 0;
+}
+
+.panel p + p,
+.app-card-body p + p {
+  margin-top: 12px;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.app-card {
+  padding: 24px;
+}
+
+.app-card-header {
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+.app-name-ja {
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+[data-lang-content][hidden] {
+  display: none !important;
+}
+
+.app-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.app-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--text);
+}
+
+.app-links a:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+}
+
+.back-link {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .language-switcher {
+    justify-content: flex-start;
+    padding-top: 16px;
+  }
+
+  .hero {
+    padding: 56px 0 28px;
+  }
+
+  .panel,
+  .app-card {
+    padding: 20px;
+  }
+}

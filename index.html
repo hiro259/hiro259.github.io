@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiro259</title>
+  <meta
+    name="description"
+    content="hiro259 の自己紹介とアプリ一覧を掲載する GitHub Pages 用のシンプルなトップページです。"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="language-switcher container" aria-label="Language switcher">
+    <button type="button" class="language-button" data-lang-switch="ja">日本語</button>
+    <button type="button" class="language-button" data-lang-switch="en">English</button>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">
+        <span data-lang-content="en">Developer Page</span>
+        <span data-lang-content="ja">開発者ページ</span>
+      </p>
+      <h1>Hiro259</h1>
+      <p class="hero-subtitle">hiro259</p>
+      <p class="hero-text" data-lang-content="en">
+        Personal developer page for small and practical apps.
+      </p>
+      <p class="hero-text" data-lang-content="ja">
+        小さくて実用的なアプリを個人開発しているページです。
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" id="about">
+      <div class="section-heading">
+        <p class="section-label">
+          <span data-lang-content="en">About</span>
+          <span data-lang-content="ja">About</span>
+        </p>
+        <h2>
+          <span data-lang-content="en">About Me</span>
+          <span data-lang-content="ja">自己紹介</span>
+        </h2>
+      </div>
+      <div class="panel">
+        <p data-lang-content="en">
+          I build apps as an independent developer, focusing on simple tools that are easy to use in daily life.
+        </p>
+        <p data-lang-content="ja">
+          個人開発で、日常の中で気軽に使える小さな実用アプリを作っています。
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="apps">
+      <div class="section-heading">
+        <p class="section-label">
+          <span data-lang-content="en">Apps</span>
+          <span data-lang-content="ja">Apps</span>
+        </p>
+        <h2>
+          <span data-lang-content="en">Apps</span>
+          <span data-lang-content="ja">アプリ</span>
+        </h2>
+      </div>
+      <div class="apps-grid">
+        <article class="app-card">
+          <div class="app-card-header">
+            <p class="app-label">App 01</p>
+            <h3 data-lang-content="en">Mahjong Tile Pad</h3>
+            <h3 data-lang-content="ja">麻雀牌パッド</h3>
+          </div>
+          <div class="app-card-body">
+            <p data-lang-content="en">
+              A simple app for typing and copying mahjong tiles as text.
+            </p>
+            <p data-lang-content="ja">
+              麻雀牌を文字で入力してコピーできるシンプルなアプリです。
+            </p>
+          </div>
+          <div class="app-links" aria-label="Mahjong Tile Pad links">
+            <a href="./apps/mahjong-tile-pad/support.html">Support</a>
+            <a href="./privacy.html">
+              <span data-lang-content="en">Privacy</span>
+              <span data-lang-content="ja">プライバシー</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-heading">
+        <p class="section-label">
+          <span data-lang-content="en">Contact</span>
+          <span data-lang-content="ja">Contact</span>
+        </p>
+        <h2>
+          <span data-lang-content="en">Contact</span>
+          <span data-lang-content="ja">連絡先</span>
+        </h2>
+      </div>
+      <div class="panel">
+        <p data-lang-content="en">
+          Email:
+          <a href="mailto:2599.hiro@gmail.com">2599.hiro@gmail.com</a>
+        </p>
+        <p data-lang-content="ja">
+          メール:
+          <a href="mailto:2599.hiro@gmail.com">2599.hiro@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var storageKey = "preferredLanguage";
+      var defaultLang = "en";
+      var langButtons = document.querySelectorAll("[data-lang-switch]");
+      var langContents = document.querySelectorAll("[data-lang-content]");
+
+      function applyLanguage(lang) {
+        var activeLang = lang === "ja" ? "ja" : "en";
+
+        document.documentElement.lang = activeLang;
+        document.body.setAttribute("data-current-lang", activeLang);
+
+        langContents.forEach(function (element) {
+          element.hidden = element.getAttribute("data-lang-content") !== activeLang;
+        });
+
+        langButtons.forEach(function (button) {
+          var isActive = button.getAttribute("data-lang-switch") === activeLang;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+
+        localStorage.setItem(storageKey, activeLang);
+      }
+
+      var savedLang = localStorage.getItem(storageKey) || defaultLang;
+      applyLanguage(savedLang);
+
+      langButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          applyLanguage(button.getAttribute("data-lang-switch"));
+        });
+      });
+    }());
+  </script>
+</body>
+</html>
