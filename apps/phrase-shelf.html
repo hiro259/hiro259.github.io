@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phrase Shelf</title>
+  <meta
+    name="description"
+    content="Phrase Shelf のサポートページです。"
+  >
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="language-switcher container" aria-label="Language switcher">
+    <button type="button" class="language-button" data-lang-switch="ja">日本語</button>
+    <button type="button" class="language-button" data-lang-switch="en">English</button>
+  </div>
+
+  <header class="hero hero-simple">
+    <div class="container">
+      <p class="eyebrow">
+        <span data-lang-content="en">App Support</span>
+        <span data-lang-content="ja">アプリサポート</span>
+      </p>
+      <h1>Phrase Shelf</h1>
+      <p class="hero-subtitle" data-lang-content="en">Save, organize, and quickly copy your frequently used replies</p>
+      <p class="hero-subtitle" data-lang-content="ja">よく使う返信文を保存・整理して、すぐにコピー</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="panel">
+        <div data-lang-content="en">
+          <p>Phrase Shelf is a reply-template library for iPhone, iPad, and Mac.</p>
+          <p>Save frequently used text, organize it with tags, search quickly, and copy a template when you need it.</p>
+        </div>
+        <div data-lang-content="ja">
+          <p>Phrase Shelf は、iPhone・iPad・Macで使える返信テンプレート管理アプリです。</p>
+          <p>よく使う文章を保存し、タグで整理・検索して、必要なときにすぐコピーできます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="section-label">
+          <span>Features</span>
+        </p>
+        <h2>
+          <span data-lang-content="en">Main Features</span>
+          <span data-lang-content="ja">主な機能</span>
+        </h2>
+      </div>
+      <div class="panel">
+        <ul class="feature-list" data-lang-content="en">
+          <li>Create, edit, duplicate, and delete text templates</li>
+          <li>Search templates by title, body, or tag</li>
+          <li>Organize templates with tags</li>
+          <li>Copy a template with a tap</li>
+          <li>Sync data across devices with iCloud</li>
+          <li>Supports iPhone, iPad, and Mac</li>
+        </ul>
+        <ul class="feature-list" data-lang-content="ja">
+          <li>文章テンプレートの作成・編集・複製・削除</li>
+          <li>タイトル・本文・タグから検索</li>
+          <li>タグでテンプレートを整理</li>
+          <li>タップですぐにコピー</li>
+          <li>iCloudで端末間同期</li>
+          <li>iPhone・iPad・Macに対応</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="section-label">
+          <span>Support</span>
+        </p>
+        <h2>
+          <span data-lang-content="en">Contact</span>
+          <span data-lang-content="ja">サポート連絡先</span>
+        </h2>
+      </div>
+      <div class="panel">
+        <p data-lang-content="en">
+          For support or questions:
+          <a href="mailto:2599.hiro@gmail.com">2599.hiro@gmail.com</a>
+        </p>
+        <p data-lang-content="ja">
+          サポートやお問い合わせ:
+          <a href="mailto:2599.hiro@gmail.com">2599.hiro@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="app-links">
+        <a href="../privacy/Phrase%20Shelf%20Privacy.html">
+          <span data-lang-content="en">Privacy Policy</span>
+          <span data-lang-content="ja">プライバシーポリシー</span>
+        </a>
+        <a href="../index.html">
+          <span data-lang-content="en">Back to Home</span>
+          <span data-lang-content="ja">トップページへ戻る</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var storageKey = "preferredLanguage";
+      var defaultLang = "ja";
+      var langButtons = document.querySelectorAll("[data-lang-switch]");
+      var langContents = document.querySelectorAll("[data-lang-content]");
+
+      function applyLanguage(lang) {
+        var activeLang = lang === "en" ? "en" : "ja";
+
+        document.documentElement.lang = activeLang;
+        document.body.setAttribute("data-current-lang", activeLang);
+
+        langContents.forEach(function (element) {
+          element.hidden = element.getAttribute("data-lang-content") !== activeLang;
+        });
+
+        langButtons.forEach(function (button) {
+          var isActive = button.getAttribute("data-lang-switch") === activeLang;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+
+        localStorage.setItem(storageKey, activeLang);
+      }
+
+      var savedLang = localStorage.getItem(storageKey) || defaultLang;
+      applyLanguage(savedLang);
+
+      langButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          applyLanguage(button.getAttribute("data-lang-switch"));
+        });
+      });
+    }());
+  </script>
+</body>
+</html>
