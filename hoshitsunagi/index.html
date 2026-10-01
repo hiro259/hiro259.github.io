@@ -3,149 +3,166 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HOSHITSUNAGI — 星繋</title>
-  <meta name="description" content="HOSHITSUNAGI (星繋) is a visual game about connecting stars and watching chains bloom into light, flowers, fireworks, and celestial phenomena.">
-  <meta name="theme-color" content="#090b16">
+  <title>HOSHITSUNAGI — Connect the stars. Let the sky bloom.</title>
+  <meta name="description" content="HOSHITSUNAGI is a visual game for iPhone. Trace through stars, build chains, watch Bloom spread, discover SPECIALs, and replay the skies you created.">
+  <meta name="theme-color" content="#040713">
+  <link rel="canonical" href="https://hoshitsunagi.app/">
+  <link rel="icon" href="./assets/app-icon.png">
+  <link rel="apple-touch-icon" href="./assets/app-icon.png">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="HOSHITSUNAGI — 星繋">
+  <meta property="og:url" content="https://hoshitsunagi.app/">
+  <meta property="og:title" content="HOSHITSUNAGI">
   <meta property="og:description" content="Connect the stars. Let the sky bloom.">
+  <meta property="og:image" content="https://hoshitsunagi.app/assets/gameplay-reference.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HOSHITSUNAGI">
+  <meta name="twitter:description" content="Connect the stars. Let the sky bloom.">
+  <meta name="twitter:image" content="https://hoshitsunagi.app/assets/gameplay-reference.png">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="HOSHITSUNAGI home">
-      <span class="brand-kanji">星繋</span>
       <span class="brand-roman">HOSHITSUNAGI</span>
+      <span class="brand-kanji" lang="ja">星繋</span>
     </a>
-    <span class="status">COMING SOON</span>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#play">Play</a>
+      <a href="#discover">Discover</a>
+      <a href="#replay">Replay</a>
+      <a href="./support/">Support</a>
+    </nav>
+    <span class="status">iPhone · Coming Soon</span>
   </header>
 
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">A game of stars, chains, and light.</p>
-        <h1>Connect the stars.<br><span>Let the sky bloom.</span></h1>
-        <p class="hero-ja">星をつなぎ、空を咲かせる。</p>
+        <p class="eyebrow">A game of connection, bloom, and discovery.</p>
+        <h1>HOSHITSUNAGI</h1>
+        <p class="hero-tagline">Connect the stars.<br>Let the sky bloom.</p>
         <p class="lead">
-          HOSHITSUNAGI is a visual game about building chains between stars and discovering what appears when they connect.
+          Trace a path through STARs, build a chain, and watch light spread across the sky.
+          Some connections open into something unexpected.
         </p>
         <div class="hero-actions">
           <span class="store-button" aria-disabled="true">App Store · Coming Soon</span>
-          <span class="store-button secondary" aria-disabled="true">Android · Planned</span>
+          <a class="text-link" href="#play">See how it plays <span aria-hidden="true">↓</span></a>
         </div>
+        <p class="brand-note"><strong>HOSHITSUNAGI</strong> is the global name. <span lang="ja">星繋</span> is its Japanese expression.</p>
       </div>
 
-      <div class="hero-art" aria-hidden="true">
-        <div class="glow glow-a"></div>
-        <div class="glow glow-b"></div>
-        <svg class="constellation" viewBox="0 0 720 720" role="img">
-          <defs>
-            <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
-              <feGaussianBlur stdDeviation="7" result="blur"/>
-              <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-            <linearGradient id="lineGlow" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0" stop-color="#8ee9ff"/>
-              <stop offset="0.55" stop-color="#a6a2ff"/>
-              <stop offset="1" stop-color="#ffd4fa"/>
-            </linearGradient>
-          </defs>
-
-          <g class="orbit-lines" fill="none">
-            <circle cx="360" cy="360" r="226"/>
-            <circle cx="360" cy="360" r="154"/>
-          </g>
-
-          <g class="links" fill="none" stroke="url(#lineGlow)" stroke-linecap="round">
-            <path d="M145 462 L236 314 L346 404 L448 252 L578 338"/>
-            <path d="M236 314 L286 174 L448 252"/>
-            <path d="M346 404 L434 512 L578 338"/>
-          </g>
-
-          <g class="stars" fill="#fff" filter="url(#softGlow)">
-            <circle cx="145" cy="462" r="7"/>
-            <circle cx="236" cy="314" r="9"/>
-            <circle cx="286" cy="174" r="6"/>
-            <circle cx="346" cy="404" r="11"/>
-            <circle cx="448" cy="252" r="8"/>
-            <circle cx="434" cy="512" r="6"/>
-            <circle cx="578" cy="338" r="10"/>
-          </g>
-
-          <g class="bloom" transform="translate(346 404)" fill="none" stroke="url(#lineGlow)">
-            <circle r="43"/>
-            <circle r="76"/>
-            <path d="M0 -112 C24 -78 24 -46 0 0 C-24 -46 -24 -78 0 -112Z"/>
-            <path d="M112 0 C78 24 46 24 0 0 C46 -24 78 -24 112 0Z"/>
-            <path d="M0 112 C-24 78 -24 46 0 0 C24 46 24 78 0 112Z"/>
-            <path d="M-112 0 C-78 -24 -46 -24 0 0 C-46 24 -78 24 -112 0Z"/>
-          </g>
-        </svg>
-        <div class="art-caption">HOSHITSUNAGI <span>星繋</span></div>
-      </div>
+      <figure class="hero-visual">
+        <img class="gameplay-image" src="./assets/gameplay-reference.png" alt="HOSHITSUNAGI gameplay visual with colorful Bloom, rings, particles, and connected light on a dark background">
+        <div class="kanji-overlay" aria-hidden="true">
+          <img src="./assets/kanji-vertical.png" alt="">
+        </div>
+        <figcaption>Game-native Bloom / ring / particle / trail language</figcaption>
+      </figure>
     </section>
 
-    <section class="intro section-shell">
-      <p class="section-kicker">THE IDEA</p>
-      <h2>A simple connection can become something unexpected.</h2>
-      <p class="section-ja">ひとつのつながりから、思いがけない景色が生まれる。</p>
+    <section class="play section-shell" id="play">
+      <div class="section-heading">
+        <p class="section-kicker">HOW IT PLAYS</p>
+        <h2>One gesture. Three moments.</h2>
+        <p>You do not need a long rulebook to understand HOSHITSUNAGI. The play itself tells the story.</p>
+      </div>
 
-      <div class="feature-grid">
-        <article class="feature-card">
-          <span class="feature-number">01</span>
-          <h3>Connect</h3>
-          <p>Find a path through the stars and build a chain.</p>
+      <div class="play-flow" aria-label="Connect, Bloom, Discover">
+        <article class="play-step">
+          <span class="step-index">01</span>
+          <div>
+            <h3>Connect</h3>
+            <p>Trace through STARs and build a chain with your finger.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-number">02</span>
-          <h3>Bloom</h3>
-          <p>Watch light, flowers, fireworks, and other forms unfold from your play.</p>
+        <div class="flow-line" aria-hidden="true"></div>
+        <article class="play-step">
+          <span class="step-index">02</span>
+          <div>
+            <h3>Bloom</h3>
+            <p>As the chain completes, color, rings, particles, and light spread from the play.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-number">03</span>
-          <h3>Discover</h3>
-          <p>Different moments can reveal different visual surprises across the sky.</p>
+        <div class="flow-line" aria-hidden="true"></div>
+        <article class="play-step">
+          <span class="step-index">03</span>
+          <div>
+            <h3>Discover</h3>
+            <p>Some moments reveal SPECIALs — visual events that make each sky worth watching.</p>
+          </div>
         </article>
       </div>
+
+      <figure class="wide-gameplay">
+        <img src="./assets/gameplay-reference.png" alt="A close view of HOSHITSUNAGI Bloom effects and connected light">
+      </figure>
     </section>
 
-    <section class="world section-shell">
-      <div class="world-copy">
-        <p class="section-kicker">A LIVING SKY</p>
-        <h2>Flowers. Fireworks. Snow. The cosmos.</h2>
+    <section class="discover section-shell" id="discover">
+      <div class="discover-copy">
+        <p class="section-kicker">SPECIAL</p>
+        <h2>The sky can become more than a chain.</h2>
         <p>
-          The sky of HOSHITSUNAGI is built to change. Chains can open into many kinds of visual events, from quiet seasonal scenes to large celestial spectacles.
+          HOSHITSUNAGI includes SPECIAL discoveries across flowers, fireworks, seasonal scenes,
+          celestial motifs, and other visual patterns. They emerge from the same play language —
+          not from a separate mode.
+        </p>
+        <p class="quiet-list">FLOWER · FIREWORKS · CELESTIAL · SEASONAL · GEOMETRY</p>
+      </div>
+      <div class="discover-visual">
+        <img class="app-icon" src="./assets/app-icon.png" alt="HOSHITSUNAGI v1.0 app icon">
+        <p>The v1.0 icon is built from the same Bloom, overlap, transparency, and color language as the game.</p>
+      </div>
+    </section>
+
+    <section class="replay section-shell" id="replay">
+      <div class="replay-line" aria-hidden="true"></div>
+      <div class="replay-copy">
+        <p class="section-kicker">REPLAY</p>
+        <h2>Watch your sky happen again.</h2>
+        <p>
+          Finished plays can be replayed. Return to the path, the Bloom, and the discoveries you created,
+          then keep favorite replays or share a still or video from the app.
         </p>
       </div>
-      <div class="world-words" aria-hidden="true">
-        <span>FLOWER</span>
-        <span>FIREWORKS</span>
-        <span>SNOW</span>
-        <span>GALAXY</span>
-        <span>ECLIPSE</span>
-        <span>BLOOM</span>
+    </section>
+
+    <section class="identity section-shell">
+      <div class="identity-copy">
+        <p class="section-kicker">HOSHITSUNAGI / <span lang="ja">星繋</span></p>
+        <h2>One name. A Japanese expression within it.</h2>
+        <p>
+          HOSHITSUNAGI remains the official global brand. The adopted brush-written <span lang="ja">星繋</span>
+          adds a Japanese voice to the same world without replacing the name.
+        </p>
+      </div>
+      <div class="kanji-horizontal-wrap" aria-label="Official Japanese HOSHITSUNAGI logo, 星繋">
+        <img class="kanji-horizontal" src="./assets/kanji-horizontal.png" alt="星繋">
       </div>
     </section>
 
-    <section class="coming section-shell">
-      <p class="section-kicker">COMING SOON</p>
-      <h2>HOSHITSUNAGI</h2>
-      <p class="coming-kanji">星繋</p>
-      <p>In development for mobile.</p>
+    <section class="release section-shell">
+      <img class="release-icon" src="./assets/app-icon.png" alt="" aria-hidden="true">
+      <div>
+        <p class="section-kicker">VERSION 1.0</p>
+        <h2>HOSHITSUNAGI for iPhone.</h2>
+        <p>Preparing for App Store release.</p>
+      </div>
+      <span class="store-button" aria-disabled="true">App Store · Coming Soon</span>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div>
+    <div class="footer-brand">
       <span class="footer-title">HOSHITSUNAGI</span>
-      <span class="footer-kanji">星繋</span>
+      <span class="footer-kanji" lang="ja">星繋</span>
     </div>
-    <a href="./privacy/">Privacy</a>
-    <a href="mailto:2599.hiro@gmail.com">Contact</a>
+    <div class="footer-links">
+      <a href="./support/">Support</a>
+      <a href="./privacy/">Privacy</a>
+      <a href="mailto:2599.hiro@gmail.com">Contact</a>
+    </div>
     <span>© 2026 HOSHITSUNAGI</span>
   </footer>
 </body>
