@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — HOSHITSUNAGI</title>
+  <meta name="description" content="Support information and contact details for HOSHITSUNAGI.">
+  <meta name="theme-color" content="#040713">
+  <link rel="canonical" href="https://hoshitsunagi.app/support/">
+  <link rel="icon" href="../assets/app-icon.png">
+  <link rel="apple-touch-icon" href="../assets/app-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .support-shell{position:relative;z-index:1;width:min(calc(100% - 40px),920px);margin:0 auto;padding:72px 0 110px}
+    .support-hero{padding-bottom:42px;border-bottom:1px solid rgba(240,248,250,.08)}
+    .support-hero h1{margin:0;font-size:clamp(48px,8vw,82px);line-height:.96;letter-spacing:-.05em}
+    .support-hero .subtitle{max-width:700px;margin:22px 0 0;color:var(--muted);font-size:16px;line-height:1.8}
+    .language-switcher{display:flex;gap:8px;margin-top:28px}
+    .language-button{appearance:none;border:1px solid var(--panel-border);border-radius:999px;background:rgba(240,248,250,.035);color:var(--muted);padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+    .language-button.is-active{color:var(--text);border-color:rgba(112,225,232,.42);background:rgba(112,225,232,.08)}
+    .support-section{padding:34px 0;border-bottom:1px solid rgba(240,248,250,.08)}
+    .support-section h2{margin:0 0 14px;font-size:24px;letter-spacing:-.02em}
+    .support-section p,.support-section li{color:var(--muted);font-size:15px;line-height:1.85}
+    .support-section ul{margin:12px 0 0;padding-left:1.25rem}
+    .support-section a{color:var(--accent-a)}
+    .support-contact{margin-top:34px;padding:28px;border:1px solid var(--panel-border);border-radius:22px;background:var(--panel)}
+    .support-contact h2{margin:0 0 10px;font-size:24px}.support-contact p{margin:0;color:var(--muted);line-height:1.8}
+    .mail-button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;margin-top:20px;padding:0 18px;border:1px solid rgba(240,248,250,.16);border-radius:14px;background:rgba(240,248,250,.07);color:var(--text);font-size:13px;font-weight:720;text-decoration:none}
+    [hidden]{display:none!important}
+    @media(max-width:640px){.support-shell{width:min(calc(100% - 28px),920px);padding-top:48px}.support-contact{padding:22px 20px}.mail-button{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="HOSHITSUNAGI home">
+      <span class="brand-roman">HOSHITSUNAGI</span>
+      <img class="brand-kanji-logo" src="../assets/brand/hoshitsunagi-kanji-horizontal.png" alt="星繋">
+    </a>
+    <span class="status">SUPPORT</span>
+  </header>
+  <main class="support-shell">
+    <section class="support-hero">
+      <p class="section-kicker">SUPPORT</p>
+      <h1>HOSHITSUNAGI</h1>
+      <p class="subtitle" data-lang-content="en">Help with HOSHITSUNAGI, including app issues, iCloud backup, replay/export, advertising, and privacy.</p>
+      <p class="subtitle" data-lang-content="ja">HOSHITSUNAGIのアプリ、iCloudバックアップ、リプレイ・書き出し、広告、プライバシーに関するサポート情報です。</p>
+      <div class="language-switcher" aria-label="Language switcher">
+        <button type="button" class="language-button" data-lang-switch="en">English</button>
+        <button type="button" class="language-button" data-lang-switch="ja">日本語</button>
+      </div>
+    </section>
+    <div data-lang-content="en">
+      <section class="support-section">
+        <h2>Before contacting support</h2>
+        <p>When possible, include your app version, iPhone model, iOS version, what happened, and steps to reproduce the issue. A screenshot or screen recording can also help.</p>
+        <p>Please do not send passwords, unnecessary personal information, or the contents of a backup file.</p>
+      </section>
+      <section class="support-section">
+        <h2>iCloud / CloudKit backup</h2>
+        <p>If backup or restore does not behave as expected, mention whether you are signed in to iCloud and describe what happened before and after the operation.</p>
+      </section>
+      <section class="support-section">
+        <h2>Replay and export</h2>
+        <p>If a favorite replay, still-image export, or video export does not work as expected, describe the action you selected and whether it happens with every replay or only a particular one.</p>
+      </section>
+      <section class="support-section">
+        <h2>Advertising and privacy</h2>
+        <p>For details about advertising, consent management, app data, and iCloud handling, see the <a href="../privacy/">Privacy Policy</a>.</p>
+      </section>
+      <section class="support-contact">
+        <h2>Contact</h2>
+        <p>Support inquiries can be sent by email.</p>
+        <a class="mail-button" href="mailto:2599.hiro@gmail.com">Email HOSHITSUNAGI Support</a>
+      </section>
+    </div>
+    <div data-lang-content="ja">
+      <section class="support-section">
+        <h2>お問い合わせ前に</h2>
+        <p>可能であれば、アプリバージョン、iPhoneの機種、iOSバージョン、発生した内容、再現手順をご記載ください。必要に応じてスクリーンショットや画面収録も参考になります。</p>
+        <p>パスワード、不要な個人情報、バックアップファイルの内容は送信しないでください。</p>
+      </section>
+      <section class="support-section">
+        <h2>iCloud / CloudKit バックアップ</h2>
+        <p>バックアップや復元に問題がある場合は、iCloudへサインインしているか、操作の前後で何が起きたかをご記載ください。</p>
+      </section>
+      <section class="support-section">
+        <h2>リプレイ・書き出し</h2>
+        <p>お気に入りリプレイ、静止画書き出し、動画書き出しに問題がある場合は、どの操作で発生したか、毎回か特定のリプレイだけかをご記載ください。</p>
+      </section>
+      <section class="support-section">
+        <h2>広告・プライバシー</h2>
+        <p>広告、同意管理、アプリ内データ、iCloudでの情報の取り扱いについては<a href="../privacy/">プライバシーポリシー</a>をご確認ください。</p>
+      </section>
+      <section class="support-contact">
+        <h2>お問い合わせ</h2>
+        <p>サポートへのお問い合わせはメールで受け付けています。</p>
+        <a class="mail-button" href="mailto:2599.hiro@gmail.com">メールで問い合わせる</a>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="footer-title">HOSHITSUNAGI</span><span class="footer-note">星繋</span></div>
+    <div class="footer-links"><a href="../">Home</a><a href="../privacy/">Privacy</a><a href="mailto:2599.hiro@gmail.com">Contact</a></div>
+    <span>© 2026 HOSHITSUNAGI</span>
+  </footer>
+  <script>
+    (function(){
+      var key="hoshitsunagiPreferredLanguage";
+      var browser=(navigator.language||"").toLowerCase();
+      var initial=localStorage.getItem(key)||(browser.indexOf("ja")===0?"ja":"en");
+      var buttons=document.querySelectorAll("[data-lang-switch]");
+      var contents=document.querySelectorAll("[data-lang-content]");
+      function apply(lang){
+        lang=lang==="ja"?"ja":"en";
+        document.documentElement.lang=lang;
+        contents.forEach(function(el){el.hidden=el.getAttribute("data-lang-content")!==lang;});
+        buttons.forEach(function(btn){var active=btn.getAttribute("data-lang-switch")===lang;btn.classList.toggle("is-active",active);btn.setAttribute("aria-pressed",active?"true":"false");});
+        localStorage.setItem(key,lang);
+      }
+      apply(initial);
+      buttons.forEach(function(btn){btn.addEventListener("click",function(){apply(btn.getAttribute("data-lang-switch"));});});
+    }());
+  </script>
+</body>
+</html>
