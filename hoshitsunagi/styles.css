@@ -15,6 +15,11 @@
   --rose: #d99aaa;
   --moon: #dce8ef;
   --prism: #ffd98c;
+  --panel: rgba(240, 248, 250, .045);
+  --panel-border: rgba(240, 248, 250, .11);
+  --accent-a: var(--cyan);
+  --accent-b: var(--violet);
+  --accent-c: var(--rose);
   --max: 1180px;
 }
 
