@@ -732,6 +732,12 @@ a {
     padding: 92px 0;
   }
 
+  .feature-split {
+    gap: 44px;
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
   .flow-step {
     grid-template-columns: 44px minmax(0, 1fr);
     gap: 14px;
@@ -743,7 +749,7 @@ a {
   }
 
   .feature-aside {
-    min-height: 160px;
+    min-height: 124px;
   }
 
   .release {
