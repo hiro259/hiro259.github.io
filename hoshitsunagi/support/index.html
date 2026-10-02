@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — HOSHITSUNAGI</title>
+  <meta name="description" content="Support and contact information for HOSHITSUNAGI.">
+  <meta name="theme-color" content="#040713">
+  <link rel="canonical" href="https://hoshitsunagi.app/support/">
+  <link rel="icon" href="../assets/app-icon.png">
+  <link rel="apple-touch-icon" href="../assets/app-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="HOSHITSUNAGI home">
+      <span class="brand-roman">HOSHITSUNAGI</span>
+    </a>
+    <nav class="header-nav" aria-label="Secondary navigation">
+      <a href="../privacy/">Privacy</a>
+      <span class="status">SUPPORT</span>
+    </nav>
+  </header>
+
+  <main class="info-shell">
+    <section class="info-hero">
+      <p class="section-kicker">SUPPORT</p>
+      <h1>HOSHITSUNAGI</h1>
+      <p class="subtitle">
+        <span data-lang-content="en">Help and contact information for HOSHITSUNAGI.</span>
+        <span data-lang-content="ja">HOSHITSUNAGI（星繋）のサポート・お問い合わせ案内です。</span>
+      </p>
+      <div class="language-switcher" aria-label="Language switcher">
+        <button type="button" class="language-button" data-lang-switch="en">English</button>
+        <button type="button" class="language-button" data-lang-switch="ja">日本語</button>
+      </div>
+    </section>
+
+    <div data-lang-content="en">
+      <section class="info-section">
+        <h2>Contact</h2>
+        <p>If you need help with HOSHITSUNAGI, contact the developer by email.</p>
+        <a class="support-mail" href="mailto:2599.hiro@gmail.com">2599.hiro@gmail.com</a>
+      </section>
+
+      <section class="info-section">
+        <h2>What to include</h2>
+        <p>When reporting a problem, the following information can help identify what happened:</p>
+        <ul>
+          <li>Your HOSHITSUNAGI app version</li>
+          <li>Your iPhone model and iOS version</li>
+          <li>What you were doing immediately before the issue occurred</li>
+          <li>A screenshot or screen recording, when useful</li>
+        </ul>
+        <p>Please do not send personal information or backup contents that are not necessary for support.</p>
+      </section>
+
+      <section class="info-section">
+        <h2>Privacy</h2>
+        <p>For information about app data, iCloud / CloudKit backup, advertising, and third-party services, see the <a href="../privacy/">Privacy Policy</a>.</p>
+      </section>
+    </div>
+
+    <div data-lang-content="ja">
+      <section class="info-section">
+        <h2>お問い合わせ</h2>
+        <p>HOSHITSUNAGIについてお困りの場合は、開発者までメールでお問い合わせください。</p>
+        <a class="support-mail" href="mailto:2599.hiro@gmail.com">2599.hiro@gmail.com</a>
+      </section>
+
+      <section class="info-section">
+        <h2>お問い合わせ時にあると助かる情報</h2>
+        <p>不具合についてお問い合わせいただく場合、次の情報があると状況を確認しやすくなります。</p>
+        <ul>
+          <li>HOSHITSUNAGIのアプリバージョン</li>
+          <li>iPhoneの機種とiOSバージョン</li>
+          <li>問題が起きる直前に行っていた操作</li>
+          <li>必要に応じてスクリーンショットや画面収録</li>
+        </ul>
+        <p>サポートに不要な個人情報やバックアップ内容などは送信しないでください。</p>
+      </section>
+
+      <section class="info-section">
+        <h2>プライバシー</h2>
+        <p>アプリ内データ、iCloud / CloudKitバックアップ、広告、外部サービスに関する情報は、<a href="../privacy/">プライバシーポリシー</a>をご確認ください。</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <span class="footer-title">HOSHITSUNAGI</span>
+      <span class="footer-subtitle">星繋</span>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="../">Home</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="mailto:2599.hiro@gmail.com">Contact</a>
+    </nav>
+    <span class="copyright">© 2026 HOSHITSUNAGI</span>
+  </footer>
+
+  <script>
+    (function () {
+      var storageKey = "hoshitsunagiPreferredLanguage";
+      var browserLang = (navigator.language || "").toLowerCase();
+      var defaultLang = browserLang.indexOf("ja") === 0 ? "ja" : "en";
+      var langButtons = document.querySelectorAll("[data-lang-switch]");
+      var langContents = document.querySelectorAll("[data-lang-content]");
+
+      function applyLanguage(lang) {
+        var activeLang = lang === "ja" ? "ja" : "en";
+        document.documentElement.lang = activeLang;
+
+        langContents.forEach(function (element) {
+          element.hidden = element.getAttribute("data-lang-content") !== activeLang;
+        });
+
+        langButtons.forEach(function (button) {
+          var isActive = button.getAttribute("data-lang-switch") === activeLang;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+
+        localStorage.setItem(storageKey, activeLang);
+      }
+
+      applyLanguage(localStorage.getItem(storageKey) || defaultLang);
+
+      langButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          applyLanguage(button.getAttribute("data-lang-switch"));
+        });
+      });
+    }());
+  </script>
+</body>
+</html>
