@@ -14,9 +14,6 @@
     isKanji = show;
     control.classList.toggle('is-kanji', show);
     control.setAttribute('aria-pressed', String(show));
-    control.setAttribute('aria-label', show
-      ? 'Show HOSHITSUNAGI app icon'
-      : 'Show HOSHITSUNAGI Japanese logo');
   }
 
   function takeControl() {
