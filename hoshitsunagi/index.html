@@ -20,8 +20,13 @@
   <link rel="icon" href="./assets/app-icon.png">
   <link rel="apple-touch-icon" href="./assets/app-icon.png">
   <link rel="stylesheet" href="./styles-9a7e6298.css">
+  <link rel="stylesheet" href="./hero-logo.css">
+  <link rel="stylesheet" href="./site-stars.css">
+  <script src="./hero-logo.js" defer></script>
+  <script src="./site-stars.js" defer></script>
 </head>
 <body>
+  <canvas class="site-stars" data-site-stars aria-hidden="true"></canvas>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="HOSHITSUNAGI home">
       <span class="brand-roman">HOSHITSUNAGI</span>
@@ -50,9 +55,31 @@
       </div>
 
       <div class="hero-visual">
+        <!-- Match the in-app title's color/alpha matrix without redrawing the source PNG. -->
+        <svg class="logo-svg-filter" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="kanji-ink" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+              <feColorMatrix type="matrix" values="
+                0 0 0 0 .9568627451
+                0 0 0 0 .9960784314
+                0 0 0 0 1
+                -.2551 -.8582 -.0866 0 1.1803921569" />
+              <!-- Do not paint outside the original PNG's alpha; prevents false white edges. -->
+              <feComposite in2="SourceAlpha" operator="in" />
+            </filter>
+          </defs>
+        </svg>
         <div class="icon-stage">
           <img class="icon-ambient" src="./assets/app-icon.png" alt="" aria-hidden="true">
-          <img class="app-icon" src="./assets/app-icon.png" alt="HOSHITSUNAGI app icon">
+          <button class="logo-switch" type="button" data-hero-logo-switch
+                  aria-label="Show HOSHITSUNAGI Japanese logo" aria-pressed="false"
+                  title="Hover or tap to switch between the app icon and Japanese logo">
+            <img class="app-icon" src="./assets/app-icon.png" alt="" aria-hidden="true">
+            <span class="kanji-panel" aria-hidden="true">
+              <img class="kanji-image" src="./assets/hoshitsunagi-kanji-vertical.png"
+                   alt="" width="1086" height="1448" decoding="async" fetchpriority="low">
+            </span>
+          </button>
         </div>
       </div>
     </section>

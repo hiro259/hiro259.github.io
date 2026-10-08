@@ -1,0 +1,67 @@
+/* Homepage hero only: keep the existing square, halo and layout unchanged. */
+.logo-switch {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 23%;
+  overflow: hidden;
+  isolation: isolate;
+  appearance: none;
+  background: #050817;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 34px 90px rgba(0,0,0,.38), 0 0 0 1px rgba(240,248,250,.08);
+}
+
+.logo-switch:focus-visible {
+  outline: 3px solid var(--accent-a);
+  outline-offset: 6px;
+}
+
+.logo-switch .app-icon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: inherit;
+  box-shadow: none;
+}
+
+.kanji-panel {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 43%, #15213b 0%, #091024 54%, #040713 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 750ms ease-in-out;
+}
+
+.logo-switch.is-kanji .kanji-panel { opacity: 1; }
+.logo-switch.is-autoplay .kanji-panel { transition-duration: 1200ms; }
+
+.kanji-image {
+  width: auto;
+  height: 76%;
+  max-width: 74%;
+  object-fit: contain;
+  opacity: .8;
+  /* Matches the ColorFilter.matrix applied to the same asset in the Flutter app. */
+  filter: url('#kanji-ink');
+}
+
+.logo-svg-filter {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kanji-panel { transition: none; }
+}
