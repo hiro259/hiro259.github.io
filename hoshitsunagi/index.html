@@ -61,6 +61,8 @@
                 0 0 0 0 .9960784314
                 0 0 0 0 1
                 -.2551 -.8582 -.0866 0 1.1803921569" />
+              <!-- Do not paint outside the original PNG's alpha; prevents false white edges. -->
+              <feComposite in2="SourceAlpha" operator="in" />
             </filter>
           </defs>
         </svg>
