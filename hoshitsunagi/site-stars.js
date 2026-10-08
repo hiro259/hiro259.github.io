@@ -163,9 +163,7 @@
     stop();
     if (!reduceMotion.matches && !document.hidden) {
       animationId = window.requestAnimationFrame(tick);
-    } else {
-      draw(); // Static stars remain available to reduced-motion users.
-    }
+    } // Otherwise the last frame stays visible without an animation loop.
   }
 
   window.addEventListener('resize', resize, { passive: true });
