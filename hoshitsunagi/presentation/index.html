@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#050b1b">
+  <title>プレイ動画 | HOSHITSUNAGI</title>
+  <meta name="description" content="AIと一緒に開発したゲーム『HOSHITSUNAGI（星繋）』の発表用プレイ動画です。">
+  <style>
+    :root {
+      color-scheme: dark;
+      --night: #050917;
+      --night-soft: #0b1830;
+      --text: #eff9fb;
+      --sub: #a3b8c8;
+      --mint: #82ddd7;
+      --coral: #ffa49a;
+      --lavender: #b8a5f0;
+      --line: rgba(185,220,239,.18);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 42% 34% at 11% 8%, rgba(69, 193, 198, .12), transparent 85%),
+        radial-gradient(ellipse 40% 32% at 95% 10%, rgba(178, 137, 250, .12), transparent 85%),
+        radial-gradient(ellipse 55% 32% at 55% 100%, rgba(73, 117, 186, .10), transparent 88%),
+        var(--night);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 600px;
+      top: 0;
+      left: 0;
+      background-image: radial-gradient(rgba(220,244,249,.75) .6px, transparent 1.1px);
+      background-size: 47px 51px;
+      opacity: .14;
+      pointer-events: none;
+      z-index: 0;
+      mask-image: linear-gradient(to bottom, black, transparent);
+    }
+    .page { position: relative; z-index: 1; width: min(1180px, calc(100% - 44px)); margin: 0 auto; }
+    .sitebar { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:32px 0 24px; border-bottom:1px solid var(--line); }
+    .wordmark { display:flex; align-items:center; gap:12px; font-size: 14px; letter-spacing:.18em; font-weight:700; text-decoration:none; color:var(--text); }
+    .brand-symbol { color:var(--mint); font-size: 26px; line-height:1; }
+    .sitebar-note { font-size: 11px; letter-spacing:.16em; text-transform:uppercase; color:var(--sub); border:1px solid var(--line); border-radius:100px; padding:9px 12px; white-space:nowrap; }
+    .intro { text-align:center; padding:72px 0 48px; }
+    .eyebrow { color:var(--mint); font-size:12px; font-weight:700; letter-spacing:.28em; margin:0 0 18px; }
+    h1 { margin:0; font-weight:650; letter-spacing:.035em; font-size:clamp(32px, 5vw, 56px); line-height:1.3; }
+    .intro-lead { margin:24px auto 0; color:#c7dae4; font-size:clamp(14px, 1.6vw, 17px); line-height:2.0; max-width:650px; }
+    .intro-lead span { display:block; }
+    .intro-rule { margin:35px auto 0; width:72px; height:2px; background:linear-gradient(90deg,var(--mint),var(--lavender)); border-radius:4px; }
+    .gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; padding:8px 0 72px; }
+    .clip { min-width:0; background:linear-gradient(180deg,rgba(21,35,57,.88),rgba(11,23,42,.94)); border:1px solid var(--line); border-radius:20px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.14); }
+    .clip-meta { padding:25px 23px 21px; }
+    .number { font-size:12px; font-weight:800; letter-spacing:.16em; color:var(--mint); }
+    .clip:nth-child(2) .number { color:var(--coral); }
+    .clip:nth-child(3) .number { color:var(--lavender); }
+    .clip h2 { font-size:21px; font-weight:700; margin:9px 0 7px; letter-spacing:.04em; }
+    .clip-desc { font-size:13px; min-height:2.8em; margin:0; line-height:1.7; color:var(--sub); }
+    .player-wrap { padding:0 16px 16px; }
+    .player-frame { position:relative; width:100%; max-width:350px; margin:0 auto; padding:7px; background:#060c1c; border:1px solid rgba(187,213,232,.18); border-radius:22px; box-shadow:0 14px 36px rgba(0,0,0,.35); }
+    video { display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:contain; background:#060b1b; border-radius:16px; }
+    .play-hint { display:flex; justify-content:center; align-items:center; gap:7px; margin:12px 0 0; font-size:12px; color:var(--sub); }
+    .play-hint svg { width:14px; height:14px; }
+    .info { max-width:740px; margin:0 auto 72px; border-top:1px solid var(--line); padding-top:24px; color:var(--sub); font-size:13px; text-align:center; line-height:2; }
+    .footer { display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid var(--line); padding:26px 0 36px; font-size:11px; color:#8399a9; letter-spacing:.08em; }
+    .footer a { color:var(--mint); text-decoration:none; }
+    a:hover { text-decoration:underline; text-underline-offset:4px; }
+    :focus-visible { outline:3px solid var(--mint); outline-offset:5px; }
+    @media(max-width:870px) {
+      .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .clip:last-child { grid-column:1 / -1; width:min(100%,450px); justify-self:center; }
+      .clip-desc { min-height:0; }
+    }
+    @media(max-width:590px) {
+      .page { width:min(100% - 30px,450px); }
+      .sitebar { padding:22px 0 18px; }
+      .wordmark { font-size:12px; letter-spacing:.10em; gap:8px; }
+      .sitebar-note { font-size:9px; padding:7px 9px; }
+      .intro { padding:55px 10px 38px; }
+      .intro-lead { margin-top:18px; }
+      .intro-lead span { display:inline; }
+      .gallery { grid-template-columns:1fr; gap:22px; padding-bottom:48px; }
+      .clip:last-child { grid-column:auto; width:100%; }
+      .clip-meta { padding:22px 22px 18px; }
+      .player-wrap { padding:0 16px 16px; }
+      .player-frame { max-width:310px; }
+      .info { margin-bottom:52px; }
+      .footer { flex-direction:column; align-items:flex-start; gap:10px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="sitebar">
+      <a class="wordmark" href="../" aria-label="HOSHITSUNAGI 公式サイトへ">
+        <span class="brand-symbol" aria-hidden="true">✧</span>
+        HOSHITSUNAGI
+      </a>
+      <span class="sitebar-note">PRESENTATION VIDEOS</span>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="intro-title">
+        <p class="eyebrow">HOSHITSUNAGI / 星繋</p>
+        <h1 id="intro-title">星をつなぐ、空がひらく。</h1>
+        <p class="intro-lead">
+          <span>AIと一緒に開発した星をつなぐゲーム。</span>
+          <span>実際のプレイ映像を3本ご紹介します。</span>
+        </p>
+        <div class="intro-rule" aria-hidden="true"></div>
+      </section>
+      <section class="gallery" aria-label="ゲームプレイ動画一覧">
+        <article class="clip">
+          <div class="clip-meta">
+            <span class="number">01 / PLAY</span>
+            <h2>星をつなぐ</h2>
+            <p class="clip-desc">星をなぞって線でつなぎ、光が広がる基本プレイ。</p>
+          </div>
+          <div class="player-wrap">
+            <div class="player-frame">
+              <video controls playsinline preload="none" poster="./posters/play-1.jpg" width="720" height="1280" aria-label="星をつなぐ基本プレイの動画">
+                <source src="./videos/play-1.mp4" type="video/mp4">
+                お使いのブラウザは動画再生に対応していません。
+              </video>
+            </div>
+            <p class="play-hint">約11秒 ・ 再生ボタンを押してください</p>
+          </div>
+        </article>
+        <article class="clip">
+          <div class="clip-meta">
+            <span class="number">02 / CHAIN</span>
+            <h2>連鎖がひろがる</h2>
+            <p class="clip-desc">つないだ星から次々と生まれる、連鎖の光。</p>
+          </div>
+          <div class="player-wrap">
+            <div class="player-frame">
+              <video controls playsinline preload="none" poster="./posters/play-2.jpg" width="720" height="1280" aria-label="連鎖演出の動画">
+                <source src="./videos/play-2.mp4" type="video/mp4">
+                お使いのブラウザは動画再生に対応していません。
+              </video>
+            </div>
+            <p class="play-hint">約13秒 ・ 再生ボタンを押してください</p>
+          </div>
+        </article>
+        <article class="clip">
+          <div class="clip-meta">
+            <span class="number">03 / SPECIAL</span>
+            <h2>特別な演出</h2>
+            <p class="clip-desc">プレイのなかで現れる、SPECIALの光の表現。</p>
+          </div>
+          <div class="player-wrap">
+            <div class="player-frame">
+              <video controls playsinline preload="none" poster="./posters/play-3.jpg" width="720" height="1280" aria-label="SPECIALの特別演出の動画">
+                <source src="./videos/play-3.mp4" type="video/mp4">
+                お使いのブラウザは動画再生に対応していません。
+              </video>
+            </div>
+            <p class="play-hint">約14秒 ・ 再生ボタンを押してください</p>
+          </div>
+        </article>
+      </section>
+      <p class="info">このページは発表参加者向けの動画紹介ページです。<br>映像は開発中のゲームから収録したものです。<br>各動画はタップして再生できます。</p>
+    </main>
+    <footer class="footer">
+      <span>© 2026 HOSHITSUNAGI</span>
+      <a href="../">公式サイトへ戻る ↗</a>
+    </footer>
+  </div>
+</body>
+</html>
