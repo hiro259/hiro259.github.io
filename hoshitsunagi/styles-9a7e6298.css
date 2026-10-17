@@ -211,6 +211,19 @@ a {
   font-size: 12px;
   font-weight: 650;
   letter-spacing: .04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.store-button:hover {
+  background: rgba(240,248,250,.12);
+  border-color: rgba(240,248,250,.3);
+}
+
+.store-button:focus-visible {
+  outline: 3px solid var(--accent-a);
+  outline-offset: 3px;
 }
 
 .text-link {
