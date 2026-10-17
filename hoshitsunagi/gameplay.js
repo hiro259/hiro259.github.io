@@ -7,9 +7,10 @@
   const source = section.querySelector('[data-gameplay-source]');
   const panel = section.querySelector('[data-gameplay-panel]');
   const toggle = section.querySelector('[data-gameplay-toggle]');
+  const soundToggle = section.querySelector('[data-gameplay-sound]');
   const caption = section.querySelector('[data-gameplay-caption]');
   const tabs = Array.from(section.querySelectorAll('[data-gameplay-clip]'));
-  if (!video || !source || !panel || !toggle || !caption || tabs.length !== 2) return;
+  if (!video || !source || !panel || !toggle || !soundToggle || !caption || tabs.length !== 2) return;
 
   const clips = {
     play: {
@@ -39,6 +40,13 @@
     toggle.setAttribute('aria-pressed', String(playing));
   }
 
+  function updateSound() {
+    const soundOn = !video.muted;
+    soundToggle.textContent = soundOn ? 'Sound On' : 'Sound Off';
+    soundToggle.setAttribute('aria-label', soundOn ? 'Turn sound off' : 'Turn sound on');
+    soundToggle.setAttribute('aria-pressed', String(soundOn));
+  }
+
   function safePlay() {
     const result = video.play();
     if (result && typeof result.catch === 'function') {
@@ -51,6 +59,11 @@
   }
 
   function syncPlayback() {
+    // If the viewer leaves the section or backgrounds the tab, never resume audibly.
+    if ((!inView || document.hidden) && !video.muted) {
+      video.muted = true;
+      updateSound();
+    }
     if (canAutoPlay()) {
       safePlay();
     } else {
@@ -108,6 +121,12 @@
     updateToggle();
   });
 
+  soundToggle.addEventListener('click', () => {
+    video.muted = !video.muted;
+    updateSound();
+    // Unmuting is always a deliberate gesture; video playback has its own control.
+  });
+
   video.addEventListener('play', updateToggle);
   video.addEventListener('pause', updateToggle);
   video.addEventListener('ended', updateToggle);
@@ -133,5 +152,7 @@
 
   /* Keep native video controls if scripting never executes. */
   video.controls = false;
+  video.muted = true;
   updateToggle();
+  updateSound();
 })();
