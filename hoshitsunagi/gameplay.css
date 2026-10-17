@@ -65,7 +65,8 @@
   border-color: rgba(112,225,232,.43);
 }
 .gameplay-tab:focus-visible,
-.gameplay-toggle:focus-visible {
+.gameplay-toggle:focus-visible,
+.gameplay-sound:focus-visible {
   outline: 3px solid var(--accent-a);
   outline-offset: 4px;
 }
@@ -147,7 +148,8 @@
   object-fit: contain;
   background: #030616;
 }
-.gameplay-toggle {
+.gameplay-toggle,
+.gameplay-sound {
   position: absolute;
   right: 12px;
   bottom: 12px;
@@ -163,7 +165,17 @@
   letter-spacing: .03em;
   cursor: pointer;
 }
-.gameplay-toggle:hover { background: rgba(16,31,54,.95); }
+.gameplay-toggle:hover,
+.gameplay-sound:hover { background: rgba(16,31,54,.95); }
+.gameplay-sound {
+  left: 12px;
+  right: auto;
+  min-width: 95px;
+}
+.gameplay-sound[aria-pressed="true"] {
+  border-color: rgba(112,225,232,.65);
+  color: var(--accent-a);
+}
 .gameplay-footage-caption {
   min-height: 20px;
   margin: 23px 0 0;
