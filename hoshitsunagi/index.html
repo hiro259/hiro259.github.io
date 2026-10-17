@@ -22,10 +22,10 @@
   <link rel="stylesheet" href="./styles-9a7e6298.css?v=20261018">
   <link rel="stylesheet" href="./hero-logo.css">
   <link rel="stylesheet" href="./site-stars.css">
-  <link rel="stylesheet" href="./gameplay.css?v=20261018">
+  <link rel="stylesheet" href="./gameplay.css?v=20261018-audio">
   <script src="./hero-logo.js" defer></script>
   <script src="./site-stars.js" defer></script>
-  <script src="./gameplay.js?v=20261018" defer></script>
+  <script src="./gameplay.js?v=20261018-audio" defer></script>
 </head>
 <body>
   <canvas class="site-stars" data-site-stars aria-hidden="true"></canvas>
@@ -119,7 +119,7 @@
               <span class="gameplay-tab-symbol" aria-hidden="true">↗</span>
             </button>
           </div>
-          <p class="gameplay-smallprint">Real HOSHITSUNAGI footage · Muted loop preview · Tap Play to start manually</p>
+          <p class="gameplay-smallprint">Real HOSHITSUNAGI footage · Muted by default · Turn on sound to hear the game</p>
         </div>
 
         <div class="gameplay-demo">
@@ -132,6 +132,8 @@
                 <source src="./presentation/videos/play-1.mp4" type="video/mp4" data-gameplay-source>
                 Your browser cannot play this video. <a href="./presentation/videos/play-1.mp4">Open gameplay footage</a>.
               </video>
+              <button class="gameplay-sound" type="button" aria-label="Turn sound on"
+                      aria-pressed="false" data-gameplay-sound>Sound Off</button>
               <button class="gameplay-toggle" type="button" aria-label="Play gameplay video"
                       aria-pressed="false" data-gameplay-toggle>Play</button>
             </div>
