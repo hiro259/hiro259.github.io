@@ -1,0 +1,40 @@
+/* Apple-provided badge art is loaded unchanged from developer.apple.com.
+   Keep the intrinsic 135:40 aspect ratio and at least 40px onscreen height.
+   Existing CTA containers provide more than 1/4 badge-height clear space. */
+.app-store-badge {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  min-height: 48px;
+  color: var(--text);
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.app-store-badge img {
+  display: block;
+  width: auto;
+  height: 48px;
+  max-width: 100%;
+}
+
+.app-store-badge:focus-visible {
+  outline: 3px solid var(--accent-a);
+  outline-offset: 5px;
+}
+
+/* The legal attribution is separated from existing footer navigation. */
+.site-footer {
+  flex-wrap: wrap;
+}
+
+.apple-trademark {
+  flex: 0 0 100%;
+  margin: 0;
+  color: #6e7c88;
+  font-size: 10px;
+  line-height: 1.6;
+}
