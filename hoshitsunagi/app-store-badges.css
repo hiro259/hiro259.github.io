@@ -1,5 +1,5 @@
-/* Apple-provided badge art is loaded unchanged from developer.apple.com.
-   Keep the intrinsic 135:40 aspect ratio and at least 40px onscreen height.
+/* Official Apple-provided badge SVG is stored unchanged under ./assets/.
+   Render at a proportional 48px height (Apple's minimum is 40px).
    Existing CTA containers provide more than 1/4 badge-height clear space. */
 .app-store-badge {
   display: inline-flex;
